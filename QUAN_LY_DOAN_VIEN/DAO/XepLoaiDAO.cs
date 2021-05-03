@@ -26,7 +26,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool InsertXepLoai(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
         {
-            string query = string.Format("INSERT INTO XepLoai( id, madv, namhoc, nhanxet,xeploai,mahd) VALUES ({0}, {1}, {2}, {3}, {4},{5},{6}", id, madv, namhoc, nhanxet, xeploai, mahd);
+            string query = "INSERT INTO XepLoai (id, madv, namhoc, nhanxet, xeploai, mahd) VALUES ( '" + id + "','" + madv + "','" + namhoc + "','" + nhanxet + "','" + xeploai + "','" + mahd + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -34,13 +34,17 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         internal bool UpdateXepLoai(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
         {
-            throw new NotImplementedException();
+            string query = "UPDATE XepLoai SET madv = '" + madv + "', namhoc = '" + namhoc + "', nhanxet = '" + nhanxet + "', xeploai = '" + xeploai + "', mahd = '" + mahd + "' WHERE ID = '" + id + "' ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
 
-        internal bool DeleteXepLoai(object madv)
+        internal bool DeleteXepLoai(int id)
         {
-            throw new NotImplementedException();
+            string query = string.Format("Delete XepLoai where ID = '{0}'", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

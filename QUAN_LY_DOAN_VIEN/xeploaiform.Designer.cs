@@ -35,8 +35,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.btnSuaXL = new System.Windows.Forms.Button();
             this.btnThemXL = new System.Windows.Forms.Button();
             this.txtNamHocXL = new System.Windows.Forms.TextBox();
-            this.txtMaHDXL = new System.Windows.Forms.TextBox();
-            this.txtMaDVXL = new System.Windows.Forms.TextBox();
             this.txtIDXL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +44,10 @@ namespace QUAN_LY_DOAN_VIEN
             this.label5 = new System.Windows.Forms.Label();
             this.txtNhanXetXL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtXEPLOAI = new System.Windows.Forms.TextBox();
             this.btnThoatXL = new System.Windows.Forms.Button();
+            this.cbox_Mdv = new System.Windows.Forms.ComboBox();
+            this.cbox_MHD = new System.Windows.Forms.ComboBox();
+            this.comboBox_Xeploai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXEPLOAI)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,22 +107,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.txtNamHocXL.Size = new System.Drawing.Size(264, 30);
             this.txtNamHocXL.TabIndex = 35;
             // 
-            // txtMaHDXL
-            // 
-            this.txtMaHDXL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHDXL.Location = new System.Drawing.Point(479, 164);
-            this.txtMaHDXL.Name = "txtMaHDXL";
-            this.txtMaHDXL.Size = new System.Drawing.Size(264, 30);
-            this.txtMaHDXL.TabIndex = 36;
-            // 
-            // txtMaDVXL
-            // 
-            this.txtMaDVXL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDVXL.Location = new System.Drawing.Point(478, 113);
-            this.txtMaDVXL.Name = "txtMaDVXL";
-            this.txtMaDVXL.Size = new System.Drawing.Size(265, 30);
-            this.txtMaDVXL.TabIndex = 37;
-            // 
             // txtIDXL
             // 
             this.txtIDXL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,6 +164,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.dataGridViewXEPLOAI.RowTemplate.Height = 24;
             this.dataGridViewXEPLOAI.Size = new System.Drawing.Size(881, 219);
             this.dataGridViewXEPLOAI.TabIndex = 30;
+            this.dataGridViewXEPLOAI.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewXEPLOAI_CellMouseClick);
             // 
             // label5
             // 
@@ -209,14 +194,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.label7.TabIndex = 31;
             this.label7.Text = "Xếp Loại:";
             // 
-            // txtXEPLOAI
-            // 
-            this.txtXEPLOAI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXEPLOAI.Location = new System.Drawing.Point(479, 317);
-            this.txtXEPLOAI.Name = "txtXEPLOAI";
-            this.txtXEPLOAI.Size = new System.Drawing.Size(264, 30);
-            this.txtXEPLOAI.TabIndex = 35;
-            // 
             // btnThoatXL
             // 
             this.btnThoatXL.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,6 +206,38 @@ namespace QUAN_LY_DOAN_VIEN
             this.btnThoatXL.UseVisualStyleBackColor = true;
             this.btnThoatXL.Click += new System.EventHandler(this.btnThoatXL_Click);
             // 
+            // cbox_Mdv
+            // 
+            this.cbox_Mdv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbox_Mdv.FormattingEnabled = true;
+            this.cbox_Mdv.Location = new System.Drawing.Point(478, 116);
+            this.cbox_Mdv.Name = "cbox_Mdv";
+            this.cbox_Mdv.Size = new System.Drawing.Size(264, 30);
+            this.cbox_Mdv.TabIndex = 44;
+            // 
+            // cbox_MHD
+            // 
+            this.cbox_MHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbox_MHD.FormattingEnabled = true;
+            this.cbox_MHD.Location = new System.Drawing.Point(478, 165);
+            this.cbox_MHD.Name = "cbox_MHD";
+            this.cbox_MHD.Size = new System.Drawing.Size(264, 30);
+            this.cbox_MHD.TabIndex = 44;
+            // 
+            // comboBox_Xeploai
+            // 
+            this.comboBox_Xeploai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Xeploai.FormattingEnabled = true;
+            this.comboBox_Xeploai.Items.AddRange(new object[] {
+            "Gioi",
+            "Kha",
+            "Trung Binh",
+            "Yeu"});
+            this.comboBox_Xeploai.Location = new System.Drawing.Point(478, 318);
+            this.comboBox_Xeploai.Name = "comboBox_Xeploai";
+            this.comboBox_Xeploai.Size = new System.Drawing.Size(264, 30);
+            this.comboBox_Xeploai.TabIndex = 45;
+            // 
             // xeploaiform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,16 +246,16 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 703);
+            this.Controls.Add(this.comboBox_Xeploai);
+            this.Controls.Add(this.cbox_MHD);
+            this.Controls.Add(this.cbox_Mdv);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnThoatXL);
             this.Controls.Add(this.btnXoaXL);
             this.Controls.Add(this.btnSuaXL);
             this.Controls.Add(this.btnThemXL);
-            this.Controls.Add(this.txtXEPLOAI);
             this.Controls.Add(this.txtNhanXetXL);
             this.Controls.Add(this.txtNamHocXL);
-            this.Controls.Add(this.txtMaHDXL);
-            this.Controls.Add(this.txtMaDVXL);
             this.Controls.Add(this.txtIDXL);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -273,8 +282,6 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.Button btnSuaXL;
         private System.Windows.Forms.Button btnThemXL;
         private System.Windows.Forms.TextBox txtNamHocXL;
-        private System.Windows.Forms.TextBox txtMaHDXL;
-        private System.Windows.Forms.TextBox txtMaDVXL;
         private System.Windows.Forms.TextBox txtIDXL;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
@@ -284,7 +291,9 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNhanXetXL;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtXEPLOAI;
         private System.Windows.Forms.Button btnThoatXL;
+        private System.Windows.Forms.ComboBox cbox_Mdv;
+        private System.Windows.Forms.ComboBox cbox_MHD;
+        private System.Windows.Forms.ComboBox comboBox_Xeploai;
     }
 }

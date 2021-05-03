@@ -36,16 +36,16 @@ namespace QUAN_LY_DOAN_VIEN
             this.btnSuaDD = new System.Windows.Forms.Button();
             this.btnThemDD = new System.Windows.Forms.Button();
             this.txtGhiChuDD = new System.Windows.Forms.TextBox();
-            this.txtMaDVDD = new System.Windows.Forms.TextBox();
-            this.txtMaHDDD = new System.Windows.Forms.TextBox();
-            this.txtIDDD = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewQLHDONG = new System.Windows.Forms.DataGridView();
+            this.dataGridViewQLDIEMDANH = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLHDONG)).BeginInit();
+            this.cbo_mhd = new System.Windows.Forms.ComboBox();
+            this.cbo_mdv = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLDIEMDANH)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoatDD
@@ -116,29 +116,13 @@ namespace QUAN_LY_DOAN_VIEN
             this.txtGhiChuDD.Size = new System.Drawing.Size(264, 30);
             this.txtGhiChuDD.TabIndex = 65;
             // 
-            // txtMaDVDD
+            // txt_id
             // 
-            this.txtMaDVDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDVDD.Location = new System.Drawing.Point(372, 224);
-            this.txtMaDVDD.Name = "txtMaDVDD";
-            this.txtMaDVDD.Size = new System.Drawing.Size(264, 30);
-            this.txtMaDVDD.TabIndex = 66;
-            // 
-            // txtMaHDDD
-            // 
-            this.txtMaHDDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHDDD.Location = new System.Drawing.Point(371, 171);
-            this.txtMaHDDD.Name = "txtMaHDDD";
-            this.txtMaHDDD.Size = new System.Drawing.Size(265, 30);
-            this.txtMaHDDD.TabIndex = 67;
-            // 
-            // txtIDDD
-            // 
-            this.txtIDDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDDD.Location = new System.Drawing.Point(371, 118);
-            this.txtIDDD.Name = "txtIDDD";
-            this.txtIDDD.Size = new System.Drawing.Size(265, 30);
-            this.txtIDDD.TabIndex = 68;
+            this.txt_id.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(371, 118);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(265, 30);
+            this.txt_id.TabIndex = 68;
             // 
             // label6
             // 
@@ -180,15 +164,16 @@ namespace QUAN_LY_DOAN_VIEN
             this.label1.TabIndex = 64;
             this.label1.Text = "ID:";
             // 
-            // dataGridViewQLHDONG
+            // dataGridViewQLDIEMDANH
             // 
-            this.dataGridViewQLHDONG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQLHDONG.Location = new System.Drawing.Point(-1, 339);
-            this.dataGridViewQLHDONG.Name = "dataGridViewQLHDONG";
-            this.dataGridViewQLHDONG.RowHeadersWidth = 51;
-            this.dataGridViewQLHDONG.RowTemplate.Height = 24;
-            this.dataGridViewQLHDONG.Size = new System.Drawing.Size(788, 219);
-            this.dataGridViewQLHDONG.TabIndex = 60;
+            this.dataGridViewQLDIEMDANH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQLDIEMDANH.Location = new System.Drawing.Point(-1, 339);
+            this.dataGridViewQLDIEMDANH.Name = "dataGridViewQLDIEMDANH";
+            this.dataGridViewQLDIEMDANH.RowHeadersWidth = 51;
+            this.dataGridViewQLDIEMDANH.RowTemplate.Height = 24;
+            this.dataGridViewQLDIEMDANH.Size = new System.Drawing.Size(788, 219);
+            this.dataGridViewQLDIEMDANH.TabIndex = 60;
+            this.dataGridViewQLDIEMDANH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLDIEMDANH_CellMouseClick);
             // 
             // label5
             // 
@@ -202,6 +187,22 @@ namespace QUAN_LY_DOAN_VIEN
             this.label5.TabIndex = 74;
             this.label5.Text = "QUẢN LÝ ĐIỂM DANH";
             // 
+            // cbo_mhd
+            // 
+            this.cbo_mhd.FormattingEnabled = true;
+            this.cbo_mhd.Location = new System.Drawing.Point(372, 173);
+            this.cbo_mhd.Name = "cbo_mhd";
+            this.cbo_mhd.Size = new System.Drawing.Size(264, 24);
+            this.cbo_mhd.TabIndex = 75;
+            // 
+            // cbo_mdv
+            // 
+            this.cbo_mdv.FormattingEnabled = true;
+            this.cbo_mdv.Location = new System.Drawing.Point(371, 230);
+            this.cbo_mdv.Name = "cbo_mdv";
+            this.cbo_mdv.Size = new System.Drawing.Size(265, 24);
+            this.cbo_mdv.TabIndex = 76;
+            // 
             // diemdanhform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,6 +211,8 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 653);
+            this.Controls.Add(this.cbo_mdv);
+            this.Controls.Add(this.cbo_mhd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnThoatDD);
             this.Controls.Add(this.label4);
@@ -217,20 +220,18 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.btnSuaDD);
             this.Controls.Add(this.btnThemDD);
             this.Controls.Add(this.txtGhiChuDD);
-            this.Controls.Add(this.txtMaDVDD);
-            this.Controls.Add(this.txtMaHDDD);
-            this.Controls.Add(this.txtIDDD);
+            this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewQLHDONG);
+            this.Controls.Add(this.dataGridViewQLDIEMDANH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 700);
             this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "diemdanhform";
             this.Text = "Quản Lý Điểm Danh";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLHDONG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLDIEMDANH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,14 +245,14 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.Button btnSuaDD;
         private System.Windows.Forms.Button btnThemDD;
         private System.Windows.Forms.TextBox txtGhiChuDD;
-        private System.Windows.Forms.TextBox txtMaDVDD;
-        private System.Windows.Forms.TextBox txtMaHDDD;
-        private System.Windows.Forms.TextBox txtIDDD;
+        private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridViewQLHDONG;
+        private System.Windows.Forms.DataGridView dataGridViewQLDIEMDANH;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbo_mhd;
+        private System.Windows.Forms.ComboBox cbo_mdv;
     }
 }

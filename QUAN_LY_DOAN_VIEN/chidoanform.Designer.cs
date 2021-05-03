@@ -85,7 +85,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.dgv_cd.Size = new System.Drawing.Size(782, 218);
             this.dgv_cd.TabIndex = 4;
             this.dgv_cd.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_cd_CellMouseClick);
-
             // 
             // label1
             // 

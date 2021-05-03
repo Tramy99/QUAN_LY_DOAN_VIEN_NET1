@@ -19,7 +19,7 @@ namespace QUAN_LY_DOAN_VIEN.DTO
 
         public DiemDanh(DataRow row)
         {
-            this.Id= (int)row["id"];
+            this.Id= (int)row["Id"];
             this.Madv = row["madv"].ToString();
             this.Mahd = (int)row["mahd"];
             this.Ghichu = row["ghichu"].ToString();

@@ -21,26 +21,29 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListKhenThuong()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT id as N'ID', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét',xeploai as N'Xếp loại',mahd as N'Mã hoạt động' FROM dbo.XepLoai");
+            return DataProvider.Instance.ExecuteQuery("SELECT makt as N'ID', madv as N'Mã đoàn viên', namhoc as N' Năm học', tenkt as N'Tên Khen Thưởng', thanhtich as N'Thành Tích' , namhoc as N'Năm Học' FROM dbo.KhenThuong");
         }
 
-        public bool InsertKhenThuong(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
+        public bool InsertKhenThuong(int Makt, string Madv, string Tenkt, string Thanhtich, int Namhoc)
         {
-            string query = string.Format("INSERT INTO XepLoai( id, madv, namhoc, nhanxet,xeploai,mahd) VALUES ({0}, {1}, {2}, {3}, {4},{5},{6}", id, madv, namhoc, nhanxet, xeploai, mahd);
+            string query = "INSERT INTO KhenThuong (makt, madv, tenkt, thanhtich, namhoc) VALUES ( '" + Makt + "','" + Madv + "','" + Tenkt + "','" + Thanhtich + "','" + Namhoc + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
-
             return result > 0;
         }
 
-        internal bool UpdateKhenThuong(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
+        internal bool UpdateKhenThuong(int Makt, string Madv, string Tenkt, string Thanhtich, int Namhoc)
         {
-            throw new NotImplementedException();
+            string query = "UPDATE KhenThuong SET madv = '" + Madv + "', tenkt = '" + Tenkt + "', thanhtich = '" + Thanhtich + "', namhoc = '" + Namhoc + "' WHERE makt = '" + Makt + "' ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
 
-        internal bool DeleteKhenThuong(object madv)
+        internal bool DeleteKhenThuong(int Makt)
         {
-            throw new NotImplementedException();
+            string query = string.Format("Delete KhenThuong where makt = '{0}'", Makt);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
     }
 }

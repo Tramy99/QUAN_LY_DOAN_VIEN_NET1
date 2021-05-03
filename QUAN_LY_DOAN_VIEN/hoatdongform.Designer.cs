@@ -41,10 +41,10 @@ namespace QUAN_LY_DOAN_VIEN
             this.dataGridViewQLHDONG = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtThoiGianTC = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.btnThoatHD = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLHDONG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +141,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.dataGridViewQLHDONG.RowTemplate.Height = 24;
             this.dataGridViewQLHDONG.Size = new System.Drawing.Size(788, 219);
             this.dataGridViewQLHDONG.TabIndex = 17;
+            this.dataGridViewQLHDONG.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewQLHDONG_CellMouseClick);
             // 
             // label4
             // 
@@ -163,14 +164,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.label3.Size = new System.Drawing.Size(180, 23);
             this.label3.TabIndex = 18;
             this.label3.Text = "Thời Gian Tổ Chức:";
-            // 
-            // txtThoiGianTC
-            // 
-            this.txtThoiGianTC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThoiGianTC.Location = new System.Drawing.Point(372, 221);
-            this.txtThoiGianTC.Name = "txtThoiGianTC";
-            this.txtThoiGianTC.Size = new System.Drawing.Size(264, 30);
-            this.txtThoiGianTC.TabIndex = 22;
             // 
             // label6
             // 
@@ -202,6 +195,15 @@ namespace QUAN_LY_DOAN_VIEN
             this.btnThoatHD.UseVisualStyleBackColor = true;
             this.btnThoatHD.Click += new System.EventHandler(this.btnThoatHD_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(372, 228);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
+            this.dateTimePicker1.TabIndex = 60;
+            // 
             // hoatdongform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,13 +212,13 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 653);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnThoatHD);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnXoaHD);
             this.Controls.Add(this.btnSuaHD);
             this.Controls.Add(this.btnThemHD);
             this.Controls.Add(this.txtGhiChu);
-            this.Controls.Add(this.txtThoiGianTC);
             this.Controls.Add(this.txtTenHD);
             this.Controls.Add(this.txtMaHD);
             this.Controls.Add(this.label6);
@@ -249,9 +251,9 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.DataGridView dataGridViewQLHDONG;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtThoiGianTC;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Button btnThoatHD;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

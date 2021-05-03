@@ -29,7 +29,7 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void đoànViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dv.DataSource = DoanVienDAO.Instance.GetListDoanVien();
+            //dv.DataSource = DiemDanhDAO.Instance.GetListDoanVien();
         }
 
         private void điểmDanhToolStripMenuItem_Click(object sender, EventArgs e)

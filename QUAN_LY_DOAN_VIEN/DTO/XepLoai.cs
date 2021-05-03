@@ -21,7 +21,7 @@ namespace QUAN_LY_DOAN_VIEN.DTO
 
         public XepLoai(DataRow row)
         {
-            this.ID1 = (int)row["id"];
+            this.ID1 = (int)row["ID"];
             this.Madv = row["madv"].ToString();
             this.Namhoc = (int)row["namhoc"];
             this.Nhanxet = row["nhanxet"].ToString();

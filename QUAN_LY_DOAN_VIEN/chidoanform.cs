@@ -14,9 +14,6 @@ namespace QUAN_LY_DOAN_VIEN
 {
     public partial class chidoanform : Form
     {
-        private const string strconneciton = @"Data Source = DESKTOP-SI7SRA6\SQLEXPRESS; Initial Catalog='QUANLIDOANVIEN';Integrated Security=True";
-        SqlConnection con = new SqlConnection(strconneciton);
-
         BindingSource cd = new BindingSource();
 
         BindingSource mcd = new BindingSource();
@@ -47,9 +44,9 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btn_Thoatcd_Click(object sender, EventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát khỏi chương trình này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
-                Application.Exit();
+                this.Close();
             else
             {
             }

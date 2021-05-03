@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUAN_LY_DOAN_VIEN.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -19,6 +20,23 @@ namespace QUAN_LY_DOAN_VIEN.DAO
         }
 
         private DoanVienDAO() { }
+
+        public List<DoanVien> GetListMaDoanVien()
+        {
+            List<DoanVien> list = new List<DoanVien>();
+
+            string query = "select * from DoanVien";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DoanVien dv = new DoanVien(item);
+                list.Add(dv);
+            }
+
+            return list;
+        }
 
         public DataTable GetListDoanVien()
         {

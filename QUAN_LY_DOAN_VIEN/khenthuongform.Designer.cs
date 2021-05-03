@@ -37,7 +37,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.txtNamHocKT = new System.Windows.Forms.TextBox();
             this.txtThanhTichKT = new System.Windows.Forms.TextBox();
             this.txtTenKTKT = new System.Windows.Forms.TextBox();
-            this.txtMaDVKT = new System.Windows.Forms.TextBox();
             this.txtMaKTKT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewKhenThuong = new System.Windows.Forms.DataGridView();
             this.btnThoatKT = new System.Windows.Forms.Button();
+            this.cbox_madv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKhenThuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,14 +121,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.txtTenKTKT.Size = new System.Drawing.Size(264, 30);
             this.txtTenKTKT.TabIndex = 53;
             // 
-            // txtMaDVKT
-            // 
-            this.txtMaDVKT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDVKT.Location = new System.Drawing.Point(462, 162);
-            this.txtMaDVKT.Name = "txtMaDVKT";
-            this.txtMaDVKT.Size = new System.Drawing.Size(264, 30);
-            this.txtMaDVKT.TabIndex = 54;
-            // 
             // txtMaKTKT
             // 
             this.txtMaKTKT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,6 +188,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.dataGridViewKhenThuong.RowTemplate.Height = 24;
             this.dataGridViewKhenThuong.Size = new System.Drawing.Size(883, 219);
             this.dataGridViewKhenThuong.TabIndex = 44;
+            this.dataGridViewKhenThuong.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewKhenThuong_CellMouseClick);
             // 
             // btnThoatKT
             // 
@@ -209,6 +202,15 @@ namespace QUAN_LY_DOAN_VIEN
             this.btnThoatKT.UseVisualStyleBackColor = true;
             this.btnThoatKT.Click += new System.EventHandler(this.btnThoatKT_Click);
             // 
+            // cbox_madv
+            // 
+            this.cbox_madv.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbox_madv.FormattingEnabled = true;
+            this.cbox_madv.Location = new System.Drawing.Point(462, 167);
+            this.cbox_madv.Name = "cbox_madv";
+            this.cbox_madv.Size = new System.Drawing.Size(264, 30);
+            this.cbox_madv.TabIndex = 62;
+            // 
             // khenthuongform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +219,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 703);
+            this.Controls.Add(this.cbox_madv);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnThoatKT);
             this.Controls.Add(this.btnXoaKT);
@@ -225,7 +228,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.txtNamHocKT);
             this.Controls.Add(this.txtThanhTichKT);
             this.Controls.Add(this.txtTenKTKT);
-            this.Controls.Add(this.txtMaDVKT);
             this.Controls.Add(this.txtMaKTKT);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -253,7 +255,6 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.TextBox txtNamHocKT;
         private System.Windows.Forms.TextBox txtThanhTichKT;
         private System.Windows.Forms.TextBox txtTenKTKT;
-        private System.Windows.Forms.TextBox txtMaDVKT;
         private System.Windows.Forms.TextBox txtMaKTKT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -262,5 +263,6 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewKhenThuong;
         private System.Windows.Forms.Button btnThoatKT;
+        private System.Windows.Forms.ComboBox cbox_madv;
     }
 }
