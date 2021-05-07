@@ -57,7 +57,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(198, 34);
             this.txt_username.TabIndex = 1;
-            this.txt_username.Text = "mymy";
             // 
             // label2
             // 
@@ -78,7 +77,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(198, 34);
             this.txt_password.TabIndex = 1;
-            this.txt_password.Text = "123";
             this.txt_password.UseSystemPasswordChar = true;
             // 
             // btn_login

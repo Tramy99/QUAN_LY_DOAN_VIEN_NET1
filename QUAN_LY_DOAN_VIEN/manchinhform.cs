@@ -19,17 +19,21 @@ namespace QUAN_LY_DOAN_VIEN
         {
             get { return loginAccount; }
             set { loginAccount = value; 
-                //ChangeAccount(loginAccount.Type); 
             }
         }
-
         public manchinhform(Account acc)
         {
             InitializeComponent();
 
             this.LoginAccount = acc;
-
-            //LoadTable();
+            if (acc.Type.Equals(0))
+            {
+                mnuQuanLy.Visible = false;
+            }
+            else
+            {
+                thToolStripMenuItem.Visible = false;
+            }
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +115,46 @@ namespace QUAN_LY_DOAN_VIEN
         private void toolStripSeparator5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void thayĐoiMatKhauToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ChangePass dk = new ChangePass();
+            dk.Show();
+        }
+
+        private void ttdvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongTinDV tt = new ThongTinDV();
+            tt.Show();
+        }
+
+        private void troGiupToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            trogiupform tg = new trogiupform();
+            tg.Show();
+        }
+
+        private void mnuDX_Click(object sender, EventArgs e)
+        {
+            login_form logout = new login_form();
+            //logout.Visible = true;
+            this.Hide();
+            logout.Show();
+        }
+
+        private void QLTKDVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            themtaikhoanform addAccount = new themtaikhoanform();
+            this.Hide();
+            addAccount.Show();
+        }
+
+        private void thToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongTinDV ttdv = new ThongTinDV();
+            this.Hide();
+            ttdv.ShowDialog();
         }
     }
 }

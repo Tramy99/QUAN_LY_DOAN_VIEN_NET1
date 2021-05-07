@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QUAN_LY_DOAN_VIEN
 {
-    public partial class dangki_form : Form
+    public partial class ChangePass : Form
     {
-        public dangki_form()
+        public ChangePass()
         {
             InitializeComponent();
         }
@@ -32,6 +32,21 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 Application.Exit();
+            else
+            {
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (thoat == DialogResult.Yes)
+                this.Close();
             else
             {
             }

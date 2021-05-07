@@ -25,6 +25,7 @@ namespace QUAN_LY_DOAN_VIEN.DTO
 
         private int type;
 
+        private string madv;
         public int Type
         {
             get { return type; }
@@ -46,5 +47,7 @@ namespace QUAN_LY_DOAN_VIEN.DTO
             get { return userName; }
             set { userName = value; }
         }
+
+        public string Madv { get => madv; set => madv = value; }
     }
 }

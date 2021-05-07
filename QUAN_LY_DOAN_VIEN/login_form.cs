@@ -43,21 +43,6 @@ namespace QUAN_LY_DOAN_VIEN
                 this.Hide();
                 fMain.ShowDialog();
                 this.Show();
-               
-                //if () {
-                //    manchinhform fMain = new manchinhform(loginAccount);
-                //    this.Hide();
-                //    fMain.ShowDialog();
-                //    this.Show();
-                //}
-                //else
-                //{
-                //    ThongTinDV fUser = new ThongTinDV(loginAccount);
-                //    this.Hide();
-                //    fUser.ShowDialog();
-                //    this.Show();
-                //}
-
             }
             else
             {

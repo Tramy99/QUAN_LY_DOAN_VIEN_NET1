@@ -38,7 +38,7 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btnThoatXL_Click(object sender, EventArgs e)
         {
-            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát khỏi chương trình này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 this.Close();
             else

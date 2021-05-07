@@ -50,7 +50,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool InsertDoanVien(string madv, string tendv, DateTime ns, string que, string gioitinh, DateTime ngayvd, string dt, string macd)
         {
-            string query = "INSERT INTO DoanVien( madv, tendv, ns, que, gioitinh, ngayvd, dt, macd) VALUES ('" + madv + "','" + tendv + "','" + ns + "','" + que + "','" + gioitinh + "','" + ngayvd + "','" + dt + "','" + macd + "')";
+            string query = "INSERT INTO DoanVien( madv, tendv, ns, que, gioitinh, ngayvd, dt, macd) VALUES (N'" + madv + "','" + tendv + "','" + ns + "',N'" + que + "','" + gioitinh + "','" + ngayvd + "','" + dt + "','" + macd + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -58,7 +58,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         internal bool UpdateDoanVien(string tendv, DateTime ns, string que, string gioitinh, DateTime ngayvd, string dt, string macd, string madv)
         {
-            string query = "UPDATE DoanVien SET tendv = '" + tendv + "', ns = '" + ns.ToString("yyyy-MM-dd") + "', que = '" + que + "', gioitinh = '" + gioitinh + "', ngayvd = '" + ngayvd.ToString("yyyy-MM-dd") + "', dt = '" + dt + "', macd = '" + macd + "' WHERE madv = '" + madv + "' ";
+            string query = "UPDATE DoanVien SET tendv = N'" + tendv + "', ns = '" + ns.ToString("yyyy-MM-dd") + "', que = N'" + que + "', gioitinh = '" + gioitinh + "', ngayvd = '" + ngayvd.ToString("yyyy-MM-dd") + "', dt = '" + dt + "', macd = '" + macd + "' WHERE madv = '" + madv + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

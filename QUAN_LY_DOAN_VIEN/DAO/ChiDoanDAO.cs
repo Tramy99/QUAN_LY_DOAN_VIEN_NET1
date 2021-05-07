@@ -41,7 +41,12 @@ namespace QUAN_LY_DOAN_VIEN.DAO
         {
             return DataProvider.Instance.ExecuteQuery("SELECT macd as N'Mã chi đoàn', tencd as N'Tên chi đoàn' FROM dbo.ChiDoan");
         }
-        
+
+        public DataTable GetListChiDoanByAccount(string madv)
+        {
+            return DataProvider.Instance.ExecuteQuery("select t1.madv, t3.macd, t3.tencd from Account t1 left join DoanVien t2 on t1.madv = t2.madv left join ChiDoan t3 on t3.macd = t2.macd left join XepLoai t4 on t4.madv = t2.madv where t1.madv = '1721050199' ");
+        }
+
         public bool InsertChiDoan(string macd, string tencd)
         {
             string query = "INSERT INTO ChiDoan (macd, tencd) VALUES ( '" + macd + "','" + tencd + "')";

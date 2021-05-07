@@ -1,4 +1,5 @@
 ﻿using QUAN_LY_DOAN_VIEN.DAO;
+using QUAN_LY_DOAN_VIEN.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,43 +14,35 @@ namespace QUAN_LY_DOAN_VIEN
 {
     public partial class ThongTinDV : Form
     {
-        BindingSource dv = new BindingSource();
+        BindingSource data = new BindingSource();
 
-        BindingSource mcd = new BindingSource();
+        //private Account loginAccount;
+
+        //public Account LoginAccount
+        //{
+        //    get { return loginAccount; }
+        //    set
+        //    {
+        //        loginAccount = value;
+        //    }
+        //}
 
         public ThongTinDV()
         {
             InitializeComponent();
+            dataGridViewThongtinDV.DataSource = data;
+
         }
 
-        private void chiĐoànToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DDToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void đoànViênToolStripMenuItem_Click(object sender, EventArgs e)
+        string madv = "";
+        private void CDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //dv.DataSource = DiemDanhDAO.Instance.GetListDoanVien();
-        }
-
-        private void điểmDanhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hoạtĐộngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xếpLoạiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void khenThưởngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            data.DataSource = ChiDoanDAO.Instance.GetListChiDoanByAccount(madv);
         }
     }
 }

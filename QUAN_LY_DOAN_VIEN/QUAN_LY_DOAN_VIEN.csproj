@@ -50,11 +50,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dangki_form.cs">
+    <Compile Include="ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dangki_form.Designer.cs">
-      <DependentUpon>dangki_form.cs</DependentUpon>
+    <Compile Include="ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ChiDoanDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -121,11 +121,23 @@
     <Compile Include="chidoanform.Designer.cs">
       <DependentUpon>chidoanform.cs</DependentUpon>
     </Compile>
+    <Compile Include="themtaikhoanform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themtaikhoanform.Designer.cs">
+      <DependentUpon>themtaikhoanform.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinDV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThongTinDV.Designer.cs">
       <DependentUpon>ThongTinDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trogiupform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trogiupform.Designer.cs">
+      <DependentUpon>trogiupform.cs</DependentUpon>
     </Compile>
     <Compile Include="xeploaiform.cs">
       <SubType>Form</SubType>
@@ -133,8 +145,8 @@
     <Compile Include="xeploaiform.Designer.cs">
       <DependentUpon>xeploaiform.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dangki_form.resx">
-      <DependentUpon>dangki_form.cs</DependentUpon>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="diemdanhform.resx">
       <DependentUpon>diemdanhform.cs</DependentUpon>
@@ -169,8 +181,14 @@
     <EmbeddedResource Include="chidoanform.resx">
       <DependentUpon>chidoanform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="themtaikhoanform.resx">
+      <DependentUpon>themtaikhoanform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongTinDV.resx">
       <DependentUpon>ThongTinDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trogiupform.resx">
+      <DependentUpon>trogiupform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xeploaiform.resx">
       <DependentUpon>xeploaiform.cs</DependentUpon>
