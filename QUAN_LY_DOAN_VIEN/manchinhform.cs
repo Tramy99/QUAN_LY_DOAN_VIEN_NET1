@@ -26,6 +26,7 @@ namespace QUAN_LY_DOAN_VIEN
             InitializeComponent();
 
             this.LoginAccount = acc;
+
             if (acc.Type.Equals(0))
             {
                 mnuQuanLy.Visible = false;
@@ -41,9 +42,6 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát khỏi chương trình này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 Application.Exit();
-            else
-            {
-            }
         }    
         private void QLCDtoolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -75,31 +73,10 @@ namespace QUAN_LY_DOAN_VIEN
             kt.Show();
         }
 
-        private void quảnLýĐoànPhíToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            doanphiform dp = new doanphiform();
-            dp.Show();
-        }
-
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void DiemdanhtoolStripMenuItem_Click(object sender, EventArgs e)
         {
             diemdanhform dd = new diemdanhform();
             dd.Show();
-        }
-
-        private void toolStripButton9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void mnuThoat_Click(object sender, EventArgs e)
@@ -107,14 +84,6 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát khỏi chương trình này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 Application.Exit();
-            else
-            {
-            }
-        }
-
-        private void toolStripSeparator5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void thayĐoiMatKhauToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -155,6 +124,11 @@ namespace QUAN_LY_DOAN_VIEN
             ThongTinDV ttdv = new ThongTinDV();
             this.Hide();
             ttdv.ShowDialog();
+        }
+
+        private void manchinhform_Load(object sender, EventArgs e)
+        {
+            userName.Text = LogInfo.UserName;
         }
     }
 }

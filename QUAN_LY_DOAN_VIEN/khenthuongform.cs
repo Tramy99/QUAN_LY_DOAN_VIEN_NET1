@@ -16,16 +16,17 @@ namespace QUAN_LY_DOAN_VIEN
     {
         BindingSource kt = new BindingSource();
 
-        BindingSource mkt = new BindingSource();
         public khenthuongform()
         {
             InitializeComponent();
-            dataGridViewKhenThuong.DataSource = kt;
+
             LoadData();
         }
 
         private void LoadData()
         {
+            dataGridViewKhenThuong.DataSource = kt;
+
             LoadKhenThuong();
             LoadCboDoanVien(cbox_madv);
         }
@@ -46,29 +47,30 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 this.Close();
-            else
-            {
-            }
         }
 
         private void btnThemKT_Click(object sender, EventArgs e)
         {
-            int makt = Convert.ToInt32(txtMaKTKT.Text);
-            string madv = (cbox_madv.SelectedItem as DoanVien).Madv;
-            string tenkt = txtTenKTKT.Text;
-            string thanhtich = txtThanhTichKT.Text;
-            int namhoc = Convert.ToInt32(txtNamHocKT.Text);
+            try
+            {
+                int makt = Convert.ToInt32(txtMaKTKT.Text);
+                string madv = (cbox_madv.SelectedItem as DoanVien).Madv;
+                string tenkt = txtTenKTKT.Text;
+                string thanhtich = txtThanhTichKT.Text;
+                int namhoc = Convert.ToInt32(txtNamHocKT.Text);
 
-            if (KhenThuongDAO.Instance.InsertKhenThuong(makt, madv, tenkt, thanhtich, namhoc))
-            {
-                MessageBox.Show("Thêm thành công");
-                LoadKhenThuong();
-                Clear();
+                if (KhenThuongDAO.Instance.InsertKhenThuong(makt, madv, tenkt, thanhtich, namhoc))
+                {
+                    MessageBox.Show("Thêm mới thành công!");
+                    LoadKhenThuong();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới thất bại!");
+                }
             }
-            else
-            {
-                MessageBox.Show("Có lỗi khi thêm đoàn viên");
-            }
+            catch { }
         }
 
         private void Clear()
@@ -81,40 +83,48 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btnSuaKT_Click(object sender, EventArgs e)
         {
-            int makt = Convert.ToInt32(txtMaKTKT.Text);
-            string madv = (cbox_madv.SelectedItem as DoanVien).Madv;
-            string tenkt = txtTenKTKT.Text;
-            string thanhtich = txtThanhTichKT.Text;
-            int namhoc = Convert.ToInt32(txtNamHocKT.Text);
+            try
+            {
+                int makt = Convert.ToInt32(txtMaKTKT.Text);
+                string madv = (cbox_madv.SelectedItem as DoanVien).Madv;
+                string tenkt = txtTenKTKT.Text;
+                string thanhtich = txtThanhTichKT.Text;
+                int namhoc = Convert.ToInt32(txtNamHocKT.Text);
 
-            if (KhenThuongDAO.Instance.UpdateKhenThuong(makt, madv, tenkt, thanhtich, namhoc))
-            {
-                MessageBox.Show("Sửa thành công");
-                LoadKhenThuong();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi thêm đoàn viên");
-            }
-        }
-
-        private void btnXoaKT_Click(object sender, EventArgs e)
-        {
-            int makt = Convert.ToInt32(txtMaKTKT.Text);
-            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-            {
-                if (KhenThuongDAO.Instance.DeleteKhenThuong(makt))
+                if (KhenThuongDAO.Instance.UpdateKhenThuong(makt, madv, tenkt, thanhtich, namhoc))
                 {
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Sửa thành công!");
                     LoadKhenThuong();
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi ");
+                    MessageBox.Show("Sửa thất bại!");
                 }
             }
+            catch { }
+        }
+
+        private void btnXoaKT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int makt = Convert.ToInt32(txtMaKTKT.Text);
+                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    if (KhenThuongDAO.Instance.DeleteKhenThuong(makt))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadKhenThuong();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
+                }
+            }
+            catch { }
         }
 
         private void dataGridViewKhenThuong_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

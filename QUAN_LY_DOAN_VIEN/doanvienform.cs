@@ -16,8 +16,6 @@ namespace QUAN_LY_DOAN_VIEN
     {
         BindingSource dv = new BindingSource();
 
-        BindingSource mcd = new BindingSource();
-
         public doanvienform()
         {
             InitializeComponent();
@@ -34,7 +32,6 @@ namespace QUAN_LY_DOAN_VIEN
 
         void Clear()
         {
-            
             txt_mdv.Clear();
             txt_tdv.Clear();
             rtx_dc.Clear();
@@ -55,25 +52,29 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void buttonThem_Click(object sender, EventArgs e)
         {
-            DateTime ns = Convert.ToDateTime(dateTimePickerNs.Text);
-            DateTime ngayvd = Convert.ToDateTime(dateTimePickerNvd.Text);
-            string madv = txt_mdv.Text;
-            string tendv = txt_tdv.Text;
-            string que = rtx_dc.Text;
-            string gioitinh = txt_gt.Text;
-            string dt = txt_dt.Text;
-            string  macd = (cbo_mcd.SelectedItem as ChiDoan).Macd;
+            try 
+            {
+                DateTime ns = Convert.ToDateTime(dateTimePickerNs.Text);
+                DateTime ngayvd = Convert.ToDateTime(dateTimePickerNvd.Text);
+                string madv = txt_mdv.Text;
+                string tendv = txt_tdv.Text;
+                string que = rtx_dc.Text;
+                string gioitinh = txt_gt.Text;
+                string dt = txt_dt.Text;
+                string macd = (cbo_mcd.SelectedItem as ChiDoan).Macd;
 
-            if (DoanVienDAO.Instance.InsertDoanVien(madv, tendv, ns, que, gioitinh, ngayvd, dt, macd))
-            {
-                MessageBox.Show("Thêm thành công");
-                LoadDoanVien();
-                Clear();
+                if (DoanVienDAO.Instance.InsertDoanVien(madv, tendv, ns, que, gioitinh, ngayvd, dt, macd))
+                {
+                    MessageBox.Show("Thêm mới thành công!");
+                    LoadDoanVien();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới thất bại!");
+                }
             }
-            else
-            {
-                MessageBox.Show("Có lỗi khi thêm đoàn viên");
-            }
+            catch { }
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)
@@ -88,24 +89,31 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void buttonSua_Click(object sender, EventArgs e)
         {
-            DateTime ns = Convert.ToDateTime(dateTimePickerNs.Text);
-            DateTime ngayvd = Convert.ToDateTime(dateTimePickerNvd.Text);
-            string madv = txt_mdv.Text;
-            string tendv = txt_tdv.Text;
-            string que = rtx_dc.Text;
-            string gioitinh = txt_gt.Text;
-            string dt = txt_dt.Text;
-            string macd = (cbo_mcd.SelectedItem as ChiDoan).Macd;
+            try
+            {
+                DateTime ns = Convert.ToDateTime(dateTimePickerNs.Text);
+                DateTime ngayvd = Convert.ToDateTime(dateTimePickerNvd.Text);
+                string madv = txt_mdv.Text;
+                string tendv = txt_tdv.Text;
+                string que = rtx_dc.Text;
+                string gioitinh = txt_gt.Text;
+                string dt = txt_dt.Text;
+                string macd = (cbo_mcd.SelectedItem as ChiDoan).Macd;
 
-            if (DoanVienDAO.Instance.UpdateDoanVien(tendv, ns, que, gioitinh, ngayvd, dt, macd, madv))
-            {
-                MessageBox.Show("Sửa thông tin thành công");
-                LoadDoanVien();
-                Clear();
+                if (DoanVienDAO.Instance.UpdateDoanVien(tendv, ns, que, gioitinh, ngayvd, dt, macd, madv))
+                {
+                    MessageBox.Show("Sửa thành công!");
+                    LoadDoanVien();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Có lỗi khi sửa thức ăn");
+                throw new Exception("Lỗi!");
             }
         }
 
@@ -127,28 +135,35 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void buttonXoa_Click_1(object sender, EventArgs e)
         {
-            string madv = txt_mdv.Text;
-            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            try
             {
-                if (DoanVienDAO.Instance.DeleteDoanVien(madv))
+                string madv = txt_mdv.Text;
+                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
-                    MessageBox.Show("Xóa thành công");
-                    LoadDoanVien();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi khi xóa");
+                    if (DoanVienDAO.Instance.DeleteDoanVien(madv))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadDoanVien();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
                 }
             }
-               
+            catch
+            {
+                //throw new Exception("Không thể xóa vì còn tồn tại Foreign Key!");
+                MessageBox.Show("Không thể xóa vì còn tồn tại Foreign Key!");
+            }
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            string madv = txt_search.Text;
+            string key = txt_search.Text;
 
-            dv.DataSource = DoanVienDAO.Instance.SearchById(madv);
+            dv.DataSource = DoanVienDAO.Instance.SearchById(key);
         }
     }
 }

@@ -15,20 +15,19 @@ namespace QUAN_LY_DOAN_VIEN
     {
         BindingSource hd = new BindingSource();
 
-        BindingSource mhd = new BindingSource();
         public hoatdongform()
         {
             InitializeComponent();
-            dataGridViewQLHDONG.DataSource = hd;
+
             LoadData();
         }
 
         private void LoadData()
         {
+            dataGridViewQLHDONG.DataSource = hd;
+
             LoadHoatDong();
-
         }
-
         void Clear()
         {
             txtMaHD.Clear();
@@ -46,64 +45,77 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 this.Close();
-            else
-            {
-            }
         }
 
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            DateTime thoigiantc = Convert.ToDateTime(dateTimePicker1.Text);
-            int mahd = Convert.ToInt32(txtMaHD.Text);
-            string tenhd = txtTenHD.Text;
-            string ghichu = txtGhiChu.Text;
+            try
+            {
+                DateTime thoigiantc = Convert.ToDateTime(dateTimePicker1.Text);
+                int mahd = Convert.ToInt32(txtMaHD.Text);
+                string tenhd = txtTenHD.Text;
+                string ghichu = txtGhiChu.Text;
 
-            if (HoatDongDAO.Instance.InsertHoatDong(mahd, tenhd, thoigiantc, ghichu))
-            {
-                MessageBox.Show("Thêm thành công");
-                LoadHoatDong();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi ");
-            }
-        }
-
-        private void btnSuaHD_Click(object sender, EventArgs e)
-        {
-            DateTime thoigiantc = Convert.ToDateTime(dateTimePicker1.Text);
-            int mahd = Convert.ToInt32(txtMaHD.Text);
-            string tanhd = txtTenHD.Text;
-            string ghichu = txtGhiChu.Text;
-
-            if (HoatDongDAO.Instance.UpdateHoatDong(mahd, tanhd, thoigiantc, ghichu))
-            {
-                MessageBox.Show("Sửa thông tin thành công");
-                LoadHoatDong();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi sửa thức ăn");
-            }
-        }
-
-        private void btnXoaHD_Click(object sender, EventArgs e)
-        {
-            int mahd = Convert.ToInt32(txtMaHD.Text);
-            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-            {
-                if (HoatDongDAO.Instance.DeleteHoatDong(mahd))
+                if (HoatDongDAO.Instance.InsertHoatDong(mahd, tenhd, thoigiantc, ghichu))
                 {
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Thêm mới thành công!");
                     LoadHoatDong();
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi xóa");
+                    MessageBox.Show("Thêm mới thất bại!");
                 }
+            }
+            catch { }
+        }
+
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime thoigiantc = Convert.ToDateTime(dateTimePicker1.Text);
+                int mahd = Convert.ToInt32(txtMaHD.Text);
+                string tanhd = txtTenHD.Text;
+                string ghichu = txtGhiChu.Text;
+
+                if (HoatDongDAO.Instance.UpdateHoatDong(mahd, tanhd, thoigiantc, ghichu))
+                {
+                    MessageBox.Show("Sửa thành công!");
+                    LoadHoatDong();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại!");
+                }
+            }
+            catch { }
+        }
+
+        private void btnXoaHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int mahd = Convert.ToInt32(txtMaHD.Text);
+
+                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    if (HoatDongDAO.Instance.DeleteHoatDong(mahd))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadHoatDong();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể xóa vì còn tồn tại Foreign Key!");
             }
         }
 
@@ -115,7 +127,7 @@ namespace QUAN_LY_DOAN_VIEN
                 txtMaHD.Text = row.Cells[0].Value.ToString();
                 txtTenHD.Text = row.Cells[1].Value.ToString();
                 dateTimePicker1.Text = row.Cells[2].Value.ToString();
-                //txtGhiChu.Text = row.Cells[3].Value.ToString();
+                txtGhiChu.Text = row.Cells[3].Value.ToString();
             }
         }
     }

@@ -50,8 +50,12 @@ namespace QUAN_LY_DOAN_VIEN
             this.thayĐoiMatKhauToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.troGiupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.userName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -83,7 +87,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.menuStrip2.Size = new System.Drawing.Size(978, 33);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // hethong
             // 
@@ -188,6 +191,7 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // QLTKDVToolStripMenuItem
             // 
+            this.QLTKDVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QLTKDVToolStripMenuItem.Image")));
             this.QLTKDVToolStripMenuItem.Name = "QLTKDVToolStripMenuItem";
             this.QLTKDVToolStripMenuItem.Size = new System.Drawing.Size(347, 30);
             this.QLTKDVToolStripMenuItem.Text = "Quản lý tài khoản đoàn viên";
@@ -229,6 +233,30 @@ namespace QUAN_LY_DOAN_VIEN
             this.thToolStripMenuItem.Text = "Thông tin đoàn viên";
             this.thToolStripMenuItem.Click += new System.EventHandler(this.thToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.userName});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 623);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(978, 26);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // userName
+            // 
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(75, 20);
+            this.userName.Text = "Username";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 20);
+            this.toolStripStatusLabel1.Text = "Người dùng hiện tại:";
+            // 
             // manchinhform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,6 +267,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(978, 649);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -246,12 +275,16 @@ namespace QUAN_LY_DOAN_VIEN
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "manchinhform";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "Màn Hình Chính";
+            this.Text = "Phần mềm quản lý đoàn viên - Màn hình chính";
+            this.Load += new System.EventHandler(this.manchinhform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -275,5 +308,8 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.ToolStripMenuItem DiemdanhtoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QLTKDVToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel userName;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

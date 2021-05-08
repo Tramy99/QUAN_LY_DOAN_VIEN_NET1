@@ -59,7 +59,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.richTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "trogiupform";
-            this.Text = "Trợ giúp";
+            this.Text = "Phần mềm quản lý đoàn viên - Trợ giúp";
             this.ResumeLayout(false);
 
         }

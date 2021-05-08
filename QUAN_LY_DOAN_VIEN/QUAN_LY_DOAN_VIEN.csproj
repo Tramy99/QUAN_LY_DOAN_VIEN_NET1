@@ -70,12 +70,6 @@
     <Compile Include="diemdanhform.Designer.cs">
       <DependentUpon>diemdanhform.cs</DependentUpon>
     </Compile>
-    <Compile Include="doanphiform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="doanphiform.Designer.cs">
-      <DependentUpon>doanphiform.cs</DependentUpon>
-    </Compile>
     <Compile Include="doanvienform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +95,7 @@
     <Compile Include="khenthuongform.Designer.cs">
       <DependentUpon>khenthuongform.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogInfo.cs" />
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="diemdanhform.resx">
       <DependentUpon>diemdanhform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="doanphiform.resx">
-      <DependentUpon>doanphiform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="doanvienform.resx">
       <DependentUpon>doanvienform.cs</DependentUpon>

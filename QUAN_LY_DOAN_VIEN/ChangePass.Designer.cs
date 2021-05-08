@@ -148,12 +148,13 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "ChangePass";
-            this.Text = "Thay đổi mật khẩu";
+            this.Text = "Phần mềm quản lý đoàn viên - Thay đổi mật khẩu";
             this.Load += new System.EventHandler(this.dangki_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

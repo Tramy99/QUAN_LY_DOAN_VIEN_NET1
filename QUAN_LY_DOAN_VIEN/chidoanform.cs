@@ -16,18 +16,17 @@ namespace QUAN_LY_DOAN_VIEN
     {
         BindingSource cd = new BindingSource();
 
-        BindingSource mcd = new BindingSource();
-
         public chidoanform()
         {
             InitializeComponent();
-            dgv_cd.DataSource = cd;
 
             LoadData();
         }
 
         private void LoadData()
         {
+            dgv_cd.DataSource = cd;
+
             LoadChiDoan();
         }
 
@@ -47,64 +46,71 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 this.Close();
-            else
-            {
-            }
         }
 
         private void btn_Themchidoan_Click(object sender, EventArgs e)
         {
-            string macd = txtmachidoan.Text;
-            string tencd = txttenchidoan.Text;
-
-            if (ChiDoanDAO.Instance.InsertChiDoan(macd, tencd))
+            try
             {
-                MessageBox.Show("Thêm mới thành công!");
-                LoadChiDoan();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Thêm mới thất bại. ");
-            }
-           
-        }
+                string macd = txtmachidoan.Text;
+                string tencd = txttenchidoan.Text;
 
-        private void btn_Suachidoan_Click(object sender, EventArgs e)
-        {
-            string macd = txtmachidoan.Text;
-            string tencd = txttenchidoan.Text;
-
-            if (ChiDoanDAO.Instance.UpdateChiDoan(macd, tencd))
-            {
-                MessageBox.Show("Sửa  thành công");
-                LoadChiDoan();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi ");
-            }
-        }
-
-        private void btn_Xoachidoan_Click(object sender, EventArgs e)
-        {
-            string macd = txtmachidoan.Text;
-
-            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-            {
-                if (ChiDoanDAO.Instance.DeleteChiDoan(macd))
+                if (ChiDoanDAO.Instance.InsertChiDoan(macd, tencd))
                 {
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Thêm mới thành công!");
                     LoadChiDoan();
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi ");
+                    MessageBox.Show("Thêm mới thất bại! ");
                 }
-            }    
-            
+            }
+            catch { }
+        }
+
+        private void btn_Suachidoan_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string macd = txtmachidoan.Text;
+                string tencd = txttenchidoan.Text;
+
+                if (ChiDoanDAO.Instance.UpdateChiDoan(macd, tencd))
+                {
+                    MessageBox.Show("Sửa thành công!");
+                    LoadChiDoan();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại!");
+                }
+            } 
+            catch { }
+        }
+
+        private void btn_Xoachidoan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string macd = txtmachidoan.Text;
+
+                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    if (ChiDoanDAO.Instance.DeleteChiDoan(macd))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadChiDoan();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
+                }
+            }
+            catch { }
         }
                
         private void dgv_cd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

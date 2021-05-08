@@ -239,7 +239,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(900, 750);
             this.MinimumSize = new System.Drawing.Size(900, 750);
             this.Name = "khenthuongform";
-            this.Text = "Danh Mục Khen Thưởng";
+            this.Text = "Phần mềm quản lý đoàn viên - Danh Mục Khen Thưởng";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKhenThuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

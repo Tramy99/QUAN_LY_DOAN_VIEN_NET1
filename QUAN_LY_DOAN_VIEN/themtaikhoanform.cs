@@ -21,17 +21,31 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btn_saveTHE_Click(object sender, EventArgs e)
         {
-            string userName = textBox_TenTK.Text;
-            string passWord = textBox_Matkhau.Text;
-            int type = (comboBox1.SelectedIndex);
-
-            if (AccountDAO.Instance.InsertAccount(userName, passWord, type))
+            try
             {
-                MessageBox.Show("Thêm thành công");
+                string userName = textBox_TenTK.Text;
+                string passWord = textBox_Matkhau.Text;
+                int type = (comboBox1.SelectedIndex);
+
+                if (AccountDAO.Instance.InsertAccount(userName, passWord, type))
+                {
+                    MessageBox.Show("Thêm tài khoản thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại!");
+                }
             }
+            catch { }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (thoat == DialogResult.Yes)
+                this.Close();
             else
             {
-                MessageBox.Show("Có lỗi khi thêm");
             }
         }
     }

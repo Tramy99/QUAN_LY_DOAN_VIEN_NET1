@@ -21,24 +21,28 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListXepLoai()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT id as N'ID', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét',xeploai as N'Xếp loại',mahd as N'Mã hoạt động' FROM dbo.XepLoai");
+            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã xếp loại', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét', xeploai as N'Xếp loại', mahd as N'Mã hoạt động' FROM XepLoai");
+        }
+
+        public DataTable SearchXepLoai(string key)
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM XepLoai WHERE xeploai LIKE '%" + key + "%' or madv LIKE '%" + key + "%' ");
         }
 
         public bool InsertXepLoai(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
         {
-            string query = "INSERT INTO XepLoai (id, madv, namhoc, nhanxet, xeploai, mahd) VALUES ( '" + id + "','" + madv + "','" + namhoc + "','" + nhanxet + "','" + xeploai + "','" + mahd + "')";
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "INSERT INTO XepLoai (id, madv, namhoc, nhanxet, xeploai, mahd) VALUES ( '" + id + "', N'" + madv + "', '" + namhoc + "', N'" + nhanxet + "', N'" + xeploai + "', '" + mahd + "')";
+            int result = DataProvider.Instance.ExecuteNonQuery(query); 
 
             return result > 0;
         }
 
         internal bool UpdateXepLoai(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)
         {
-            string query = "UPDATE XepLoai SET madv = '" + madv + "', namhoc = '" + namhoc + "', nhanxet = '" + nhanxet + "', xeploai = '" + xeploai + "', mahd = '" + mahd + "' WHERE ID = '" + id + "' ";
+            string query = "UPDATE XepLoai SET madv = N'" + madv + "', namhoc = '" + namhoc + "', nhanxet = N'" + nhanxet + "', xeploai = N'" + xeploai + "', mahd = '" + mahd + "' WHERE ID = '" + id + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-
 
         internal bool DeleteXepLoai(int id)
         {

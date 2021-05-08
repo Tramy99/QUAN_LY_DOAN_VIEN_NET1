@@ -21,12 +21,12 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListDiemDanh()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã diểm danh', madv as N'Mã đoàn viên', mahd as N'Mã hoạt động', ghichu as N'Ghi chú' FROM dbo.DiemDanh");
+            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã diểm danh', madv as N'Mã đoàn viên', mahd as N'Mã hoạt động', ghichu as N'Ghi chú' FROM DiemDanh");
         }
 
         public bool InsertDiemDanh(int id, string madv, int mahd, string ghichu)
         {
-            string query = "INSERT INTO DiemDanh (id, madv, mahd, ghichu) VALUES ( '" + id + "','" + madv + "','" + mahd + "','" + ghichu + "')";
+            string query = "INSERT INTO DiemDanh (id, madv, mahd, ghichu) VALUES ( '" + id + "', N'" + madv + "', '" + mahd + "', N'" + ghichu + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -34,7 +34,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         internal bool UpdateDiemDanh(int id, string madv, int mahd, string ghichu)
         {
-            string query = "UPDATE dbo.DiemDanh SET madv = '" + madv + "', mahd = '" + mahd + "', ghichu = '" + ghichu + "' WHERE id ='" + id + "' ";
+            string query = "UPDATE DiemDanh SET madv = N'" + madv + "', mahd = '" + mahd + "', ghichu = N'" + ghichu + "' WHERE id ='" + id + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

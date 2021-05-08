@@ -131,9 +131,9 @@ namespace QUAN_LY_DOAN_VIEN
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(238, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 23);
+            this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Mã Hoạt Động:";
+            this.label3.Text = "Hoạt Động:";
             // 
             // label2
             // 
@@ -229,10 +229,10 @@ namespace QUAN_LY_DOAN_VIEN
             this.comboBox_Xeploai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Xeploai.FormattingEnabled = true;
             this.comboBox_Xeploai.Items.AddRange(new object[] {
-            "Gioi",
-            "Kha",
-            "Trung Binh",
-            "Yeu"});
+            "Giỏi",
+            "Khá",
+            "Trung Bình",
+            "Yếu"});
             this.comboBox_Xeploai.Location = new System.Drawing.Point(478, 318);
             this.comboBox_Xeploai.Name = "comboBox_Xeploai";
             this.comboBox_Xeploai.Size = new System.Drawing.Size(264, 30);
@@ -268,7 +268,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(900, 750);
             this.MinimumSize = new System.Drawing.Size(900, 750);
             this.Name = "xeploaiform";
-            this.Text = "Danh Mục Xếp Loại";
+            this.Text = "Phần mềm quản lý đoàn viên - Danh Mục Xếp Loại";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXEPLOAI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

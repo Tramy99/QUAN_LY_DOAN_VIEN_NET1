@@ -23,20 +23,8 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool Login(string userName, string passWord)
         {
-            //byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord);
-            //byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
-
-            //string hasPass = "";
-
-            //foreach (string item in passWord)
-            //{
-            //    passWord += item;
-            //}
-
             string query = "USP_Login @userName , @passWord";
-
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord /*list*/});
-
             return result.Rows.Count > 0;
         }
        
@@ -54,7 +42,15 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool InsertAccount(string userName, string passWord, int type)
         {
-            string query = "INSERT INTO Account( userName, passWord, type) VALUES (N'" + userName + "','" + passWord + "','" + type + "' )";
+            string query = "INSERT INTO Account( userName, passWord, type) VALUES (N'" + userName + "', N'" + passWord + "','" + type + "' )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateAccount(string userName, string passWord)
+        {
+            string query = "UPDATE Account SET passWord = N'" + passWord + "' WHERE userName = N'" + userName + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

@@ -150,9 +150,9 @@ namespace QUAN_LY_DOAN_VIEN
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(131, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 23);
+            this.label2.Size = new System.Drawing.Size(108, 23);
             this.label2.TabIndex = 63;
-            this.label2.Text = "Mã Hoạt Động:";
+            this.label2.Text = "Hoạt Động:";
             // 
             // label1
             // 
@@ -230,7 +230,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(800, 700);
             this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "diemdanhform";
-            this.Text = "Quản Lý Điểm Danh";
+            this.Text = "Phần mềm quản lý đoàn viên - Quản Lý Điểm Danh";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLDIEMDANH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

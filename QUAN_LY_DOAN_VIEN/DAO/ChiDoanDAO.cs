@@ -39,17 +39,12 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListChiDoan()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT macd as N'Mã chi đoàn', tencd as N'Tên chi đoàn' FROM dbo.ChiDoan");
-        }
-
-        public DataTable GetListChiDoanByAccount(string madv)
-        {
-            return DataProvider.Instance.ExecuteQuery("select t1.madv, t3.macd, t3.tencd from Account t1 left join DoanVien t2 on t1.madv = t2.madv left join ChiDoan t3 on t3.macd = t2.macd left join XepLoai t4 on t4.madv = t2.madv where t1.madv = '1721050199' ");
+            return DataProvider.Instance.ExecuteQuery("SELECT macd as N'Mã chi đoàn', tencd as N'Tên chi đoàn' FROM ChiDoan");
         }
 
         public bool InsertChiDoan(string macd, string tencd)
         {
-            string query = "INSERT INTO ChiDoan (macd, tencd) VALUES ( '" + macd + "','" + tencd + "')";
+            string query = "INSERT INTO ChiDoan (macd, tencd) VALUES ( N'" + macd + "', N'" + tencd + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -57,7 +52,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool UpdateChiDoan(string macd, string tencd)
         {
-            string query = "UPDATE dbo.ChiDoan SET tencd = '" + tencd + "' WHERE macd ='" + macd + "' ";
+            string query = "UPDATE ChiDoan SET tencd = N'" + tencd + "' WHERE macd = N'" + macd + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -69,6 +64,11 @@ namespace QUAN_LY_DOAN_VIEN.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
+        }
+
+        public DataTable SearchChiDoan(string key)
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM ChiDoan WHERE macd LIKE '%" + key + "%' or tencd LIKE '%" + key + "%'");
         }
     }
 }

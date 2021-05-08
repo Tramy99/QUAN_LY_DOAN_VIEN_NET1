@@ -99,6 +99,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_saveTHE
             // 
@@ -151,7 +152,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.label_TenTK);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "themtaikhoanform";
-            this.Text = "Thêm tài khoản";
+            this.Text = "Phần mềm quản lý đoàn viên - Thêm tài khoản";
             this.ResumeLayout(false);
             this.PerformLayout();
 

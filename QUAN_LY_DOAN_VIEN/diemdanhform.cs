@@ -16,28 +16,24 @@ namespace QUAN_LY_DOAN_VIEN
     {
         BindingSource dd = new BindingSource();
 
-        BindingSource mdd = new BindingSource();
         public diemdanhform()
         {
             InitializeComponent();
-
-            dataGridViewQLDIEMDANH.DataSource = dd;
 
             LoadData();
         }
 
         private void LoadData()
         {
+            dataGridViewQLDIEMDANH.DataSource = dd;
+
             LoadDiemDanh();
-
             LoadCboDoanVien(cbo_mdv);
-
             LoadCboHoatDong(cbo_mhd);
         }
 
         private void LoadCboHoatDong(ComboBox cb)
         {
-            
             cb.DataSource = HoatDongDAO.Instance.GetListMaHoatDong();
             cb.DisplayMember = "tenhd";
         }
@@ -58,27 +54,28 @@ namespace QUAN_LY_DOAN_VIEN
             DialogResult thoat = MessageBox.Show("Có phải bạn muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (thoat == DialogResult.Yes)
                 this.Close();
-            else
-            {
-            }
         }
 
         private void btnThemDD_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txt_id.Text);
-            string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
-            int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
-            string ghichu = txtGhiChuDD.Text;
-            if (DiemDanhDAO.Instance.InsertDiemDanh(id, madv, mahd, ghichu))
+            try
             {
-                MessageBox.Show("Thêm thành công");
-                LoadDiemDanh();
-                Clear();
+                int id = Convert.ToInt32(txt_id.Text);
+                string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
+                int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
+                string ghichu = txtGhiChuDD.Text;
+                if (DiemDanhDAO.Instance.InsertDiemDanh(id, madv, mahd, ghichu))
+                {
+                    MessageBox.Show("Thêm mới thành công!");
+                    LoadDiemDanh();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới thất bại!");
+                }
             }
-            else
-            {
-                MessageBox.Show("Có lỗi ");
-            }
+            catch { }
         }
 
         private void Clear()
@@ -89,40 +86,48 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btnSuaDD_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txt_id.Text);
-            string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
-            int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
-            string ghichu = txtGhiChuDD.Text;
-
-            if (DiemDanhDAO.Instance.UpdateDiemDanh(id, madv, mahd, ghichu))
+            try
             {
-                MessageBox.Show("Sửa  thành công");
-                LoadDiemDanh();
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi ");
-            }
-        }
+                int id = Convert.ToInt32(txt_id.Text);
+                string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
+                int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
+                string ghichu = txtGhiChuDD.Text;
 
-        private void btnXoaDD_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(txt_id.Text);
-
-            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-            {
-                if (DiemDanhDAO.Instance.DeleteDiemDanh(id))
+                if (DiemDanhDAO.Instance.UpdateDiemDanh(id, madv, mahd, ghichu))
                 {
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Sửa thành công!");
                     LoadDiemDanh();
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi ");
+                    MessageBox.Show("Sửa thất bại!");
                 }
             }
+            catch { }
+        }
+
+        private void btnXoaDD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(txt_id.Text);
+
+                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    if (DiemDanhDAO.Instance.DeleteDiemDanh(id))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadDiemDanh();
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!");
+                    }
+                }
+            }
+            catch { }
         }
 
         private void dataGridViewQLDIEMDANH_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

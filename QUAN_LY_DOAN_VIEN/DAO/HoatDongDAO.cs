@@ -40,12 +40,17 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListHoatDong()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', thoigiantc as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM dbo.HoatDong");
+            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', thoigiantc as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong");
+        }
+
+        public DataTable Search(string key)
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM HoatDong WHERE mahd LIKE '%" + key + "%' or tenhd LIKE '%" + key + "%' ");
         }
 
         public bool InsertHoatDong(int mahd, string tenhd, DateTime thoigiantc, string ghichu)
         {
-            string query = "INSERT INTO HoatDong (mahd, tenhd, thoigiantc, ghichu) VALUES ( '" + mahd + "','" + tenhd + "','" + thoigiantc + "','" + ghichu + "')";
+            string query = "INSERT INTO HoatDong (mahd, tenhd, thoigiantc, ghichu) VALUES ( '" + mahd + "', N'" + tenhd + "', '" + thoigiantc + "', N'" + ghichu + "')";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
@@ -53,7 +58,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         internal bool UpdateHoatDong(int mahd, string tenhd, DateTime thoigiantc, string ghichu)
         {
-            string query = "UPDATE dbo.HoatDong SET tenhd = '" + tenhd + "', thoigiantc = '" + thoigiantc + "', ghichu = '" + ghichu + "' WHERE mahd ='" + mahd + "' ";
+            string query = "UPDATE HoatDong SET tenhd = N'" + tenhd + "', thoigiantc = '" + thoigiantc + "', ghichu = N'" + ghichu + "' WHERE mahd ='" + mahd + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

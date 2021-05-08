@@ -231,7 +231,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(800, 700);
             this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "hoatdongform";
-            this.Text = "Danh Mục Hoạt Động";
+            this.Text = "Phần mềm quản lý đoàn viên - Danh Mục Hoạt Động";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLHDONG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

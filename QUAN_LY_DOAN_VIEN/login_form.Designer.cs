@@ -78,6 +78,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_password.Size = new System.Drawing.Size(198, 34);
             this.txt_password.TabIndex = 1;
             this.txt_password.UseSystemPasswordChar = true;
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // btn_login
             // 
@@ -138,7 +139,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MinimumSize = new System.Drawing.Size(600, 450);
             this.Name = "login_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng nhập vào hệ thống";
+            this.Text = "Phần mềm quản lý đoàn viên - Đăng nhập vào hệ thống";
             this.ResumeLayout(false);
             this.PerformLayout();
 

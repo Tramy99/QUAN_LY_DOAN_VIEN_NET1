@@ -38,6 +38,9 @@ namespace QUAN_LY_DOAN_VIEN
             this.HDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.KTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.type_search = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThongtinDV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,11 +48,11 @@ namespace QUAN_LY_DOAN_VIEN
             // dataGridViewThongtinDV
             // 
             this.dataGridViewThongtinDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewThongtinDV.Location = new System.Drawing.Point(-9, 147);
+            this.dataGridViewThongtinDV.Location = new System.Drawing.Point(-9, 131);
             this.dataGridViewThongtinDV.Name = "dataGridViewThongtinDV";
             this.dataGridViewThongtinDV.RowHeadersWidth = 51;
             this.dataGridViewThongtinDV.RowTemplate.Height = 24;
-            this.dataGridViewThongtinDV.Size = new System.Drawing.Size(1165, 408);
+            this.dataGridViewThongtinDV.Size = new System.Drawing.Size(1165, 424);
             this.dataGridViewThongtinDV.TabIndex = 3;
             // 
             // menuStrip1
@@ -73,6 +76,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.DVToolStripMenuItem.Name = "DVToolStripMenuItem";
             this.DVToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.DVToolStripMenuItem.Text = "Đoàn viên";
+            this.DVToolStripMenuItem.Click += new System.EventHandler(this.DVToolStripMenuItem_Click);
             // 
             // CDToolStripMenuItem
             // 
@@ -93,18 +97,52 @@ namespace QUAN_LY_DOAN_VIEN
             this.HDToolStripMenuItem.Name = "HDToolStripMenuItem";
             this.HDToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.HDToolStripMenuItem.Text = "Hoạt động";
+            this.HDToolStripMenuItem.Click += new System.EventHandler(this.HDToolStripMenuItem_Click);
             // 
             // XLToolStripMenuItem
             // 
             this.XLToolStripMenuItem.Name = "XLToolStripMenuItem";
             this.XLToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.XLToolStripMenuItem.Text = "Xếp loại";
+            this.XLToolStripMenuItem.Click += new System.EventHandler(this.XLToolStripMenuItem_Click);
             // 
             // KTToolStripMenuItem
             // 
             this.KTToolStripMenuItem.Name = "KTToolStripMenuItem";
             this.KTToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.KTToolStripMenuItem.Text = "Khen thưởng";
+            this.KTToolStripMenuItem.Click += new System.EventHandler(this.KTToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(207, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(555, 22);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(141, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // type_search
+            // 
+            this.type_search.FormattingEnabled = true;
+            this.type_search.Items.AddRange(new object[] {
+            "Chi Đoàn",
+            "Đoàn viên",
+            "Hoạt Động",
+            "Khen Thưởng",
+            "Xếp Loại"});
+            this.type_search.Location = new System.Drawing.Point(780, 60);
+            this.type_search.Name = "type_search";
+            this.type_search.Size = new System.Drawing.Size(158, 24);
+            this.type_search.TabIndex = 7;
             // 
             // ThongTinDV
             // 
@@ -113,6 +151,9 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1072, 545);
+            this.Controls.Add(this.type_search);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridViewThongtinDV);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -120,7 +161,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(1400, 1200);
             this.MinimumSize = new System.Drawing.Size(1000, 47);
             this.Name = "ThongTinDV";
-            this.Text = "Thông Tin Đoàn Viên";
+            this.Text = "Phần mềm quản lý đoàn viên - Thông Tin Đoàn Viên";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewThongtinDV)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -139,5 +180,8 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.ToolStripMenuItem HDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem XLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem KTToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox type_search;
     }
 }

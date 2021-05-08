@@ -172,7 +172,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "chidoanform";
-            this.Text = "Quản Lý Chi Đoàn";
+            this.Text = "Phần mềm quản lý đoàn viên - Quản Lý Chi Đoàn";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
