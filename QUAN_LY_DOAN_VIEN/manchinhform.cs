@@ -45,7 +45,9 @@ namespace QUAN_LY_DOAN_VIEN
         }    
         private void QLCDtoolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.IsMdiContainer = true;
             chidoanform cd = new chidoanform();
+            cd.MdiParent = this;
             cd.Show();
         }
 
@@ -115,7 +117,6 @@ namespace QUAN_LY_DOAN_VIEN
         private void QLTKDVToolStripMenuItem_Click(object sender, EventArgs e)
         {
             themtaikhoanform addAccount = new themtaikhoanform();
-            this.Hide();
             addAccount.Show();
         }
 

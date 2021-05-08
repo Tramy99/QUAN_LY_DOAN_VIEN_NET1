@@ -59,6 +59,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dgv_doanvien
             // 
+            this.dgv_doanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_doanvien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_doanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_doanvien.Location = new System.Drawing.Point(1, 339);
             this.dgv_doanvien.Name = "dgv_doanvien";

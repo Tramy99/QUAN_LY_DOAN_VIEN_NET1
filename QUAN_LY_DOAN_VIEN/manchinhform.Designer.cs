@@ -51,8 +51,8 @@ namespace QUAN_LY_DOAN_VIEN
             this.troGiupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.userName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userName = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -245,17 +245,17 @@ namespace QUAN_LY_DOAN_VIEN
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // userName
-            // 
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(75, 20);
-            this.userName.Text = "Username";
-            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 20);
             this.toolStripStatusLabel1.Text = "Người dùng hiện tại:";
+            // 
+            // userName
+            // 
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(75, 20);
+            this.userName.Text = "Username";
             // 
             // manchinhform
             // 
@@ -271,7 +271,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1000, 700);
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "manchinhform";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;

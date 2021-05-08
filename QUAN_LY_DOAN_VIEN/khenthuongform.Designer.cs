@@ -181,6 +181,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dataGridViewKhenThuong
             // 
+            this.dataGridViewKhenThuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewKhenThuong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewKhenThuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKhenThuong.Location = new System.Drawing.Point(-1, 367);
             this.dataGridViewKhenThuong.Name = "dataGridViewKhenThuong";

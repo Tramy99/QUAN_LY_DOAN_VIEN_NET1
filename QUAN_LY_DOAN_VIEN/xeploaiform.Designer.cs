@@ -157,6 +157,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dataGridViewXEPLOAI
             // 
+            this.dataGridViewXEPLOAI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewXEPLOAI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewXEPLOAI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewXEPLOAI.Location = new System.Drawing.Point(1, 371);
             this.dataGridViewXEPLOAI.Name = "dataGridViewXEPLOAI";

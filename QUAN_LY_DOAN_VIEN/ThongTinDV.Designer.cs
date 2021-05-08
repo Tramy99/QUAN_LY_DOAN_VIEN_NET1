@@ -47,6 +47,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dataGridViewThongtinDV
             // 
+            this.dataGridViewThongtinDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewThongtinDV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewThongtinDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewThongtinDV.Location = new System.Drawing.Point(-9, 131);
             this.dataGridViewThongtinDV.Name = "dataGridViewThongtinDV";

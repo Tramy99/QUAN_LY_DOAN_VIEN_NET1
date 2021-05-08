@@ -77,6 +77,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dgv_cd
             // 
+            this.dgv_cd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_cd.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_cd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cd.Location = new System.Drawing.Point(-1, 219);
             this.dgv_cd.Name = "dgv_cd";
@@ -169,7 +171,6 @@ namespace QUAN_LY_DOAN_VIEN
             this.Controls.Add(this.btn_Themchidoan);
             this.Controls.Add(this.labelchidoan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "chidoanform";
             this.Text = "Phần mềm quản lý đoàn viên - Quản Lý Chi Đoàn";

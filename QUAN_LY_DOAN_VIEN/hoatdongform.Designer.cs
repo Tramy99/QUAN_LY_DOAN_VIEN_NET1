@@ -134,6 +134,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dataGridViewQLHDONG
             // 
+            this.dataGridViewQLHDONG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewQLHDONG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewQLHDONG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQLHDONG.Location = new System.Drawing.Point(-1, 336);
             this.dataGridViewQLHDONG.Name = "dataGridViewQLHDONG";

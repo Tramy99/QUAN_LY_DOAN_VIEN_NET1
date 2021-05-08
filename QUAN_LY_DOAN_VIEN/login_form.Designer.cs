@@ -76,7 +76,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(198, 34);
-            this.txt_password.TabIndex = 1;
+            this.txt_password.TabIndex = 2;
             this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
@@ -88,7 +88,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.btn_login.Location = new System.Drawing.Point(80, 298);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(159, 36);
-            this.btn_login.TabIndex = 2;
+            this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Đăng nhập";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.button_dangnhap_Click);
@@ -102,7 +102,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.btn_exit.Location = new System.Drawing.Point(337, 298);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(162, 36);
-            this.btn_exit.TabIndex = 2;
+            this.btn_exit.TabIndex = 4;
             this.btn_exit.Text = "Thoát";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.button_thoat_Click);

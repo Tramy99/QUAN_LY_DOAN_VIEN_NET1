@@ -37,9 +37,8 @@ namespace QUAN_LY_DOAN_VIEN
                     Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
                     LogInfo.UserName = userName;
                     manchinhform fMain = new manchinhform(loginAccount);
+                    fMain.Show();
                     this.Hide();
-                    fMain.ShowDialog();
-                    this.Show();
                 }
                 else
                 {
