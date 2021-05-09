@@ -86,7 +86,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_mkm.Location = new System.Drawing.Point(226, 179);
             this.txt_mkm.Name = "txt_mkm";
             this.txt_mkm.Size = new System.Drawing.Size(210, 30);
-            this.txt_mkm.TabIndex = 1;
+            this.txt_mkm.TabIndex = 2;
             // 
             // txt_Confirm
             // 
@@ -94,7 +94,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.txt_Confirm.Location = new System.Drawing.Point(226, 229);
             this.txt_Confirm.Name = "txt_Confirm";
             this.txt_Confirm.Size = new System.Drawing.Size(210, 30);
-            this.txt_Confirm.TabIndex = 1;
+            this.txt_Confirm.TabIndex = 3;
             // 
             // label5
             // 
@@ -115,7 +115,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.btn_save.Location = new System.Drawing.Point(111, 325);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(90, 37);
-            this.btn_save.TabIndex = 2;
+            this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Lưu";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -127,7 +127,7 @@ namespace QUAN_LY_DOAN_VIEN
             this.button2.Location = new System.Drawing.Point(283, 325);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 37);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

@@ -45,6 +45,8 @@ namespace QUAN_LY_DOAN_VIEN
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_mhd = new System.Windows.Forms.ComboBox();
             this.cbo_mdv = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Search_DiemDanh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLDIEMDANH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,6 +207,25 @@ namespace QUAN_LY_DOAN_VIEN
             this.cbo_mdv.Size = new System.Drawing.Size(265, 24);
             this.cbo_mdv.TabIndex = 76;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(130, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 23);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "Tìm Kiếm";
+            // 
+            // Search_DiemDanh
+            // 
+            this.Search_DiemDanh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_DiemDanh.Location = new System.Drawing.Point(256, 75);
+            this.Search_DiemDanh.Name = "Search_DiemDanh";
+            this.Search_DiemDanh.Size = new System.Drawing.Size(380, 30);
+            this.Search_DiemDanh.TabIndex = 78;
+            this.Search_DiemDanh.TextChanged += new System.EventHandler(this.Search_DiemDanh_TextChanged);
+            // 
             // diemdanhform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,6 +234,8 @@ namespace QUAN_LY_DOAN_VIEN
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(782, 653);
+            this.Controls.Add(this.Search_DiemDanh);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbo_mdv);
             this.Controls.Add(this.cbo_mhd);
             this.Controls.Add(this.label5);
@@ -256,5 +279,7 @@ namespace QUAN_LY_DOAN_VIEN
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbo_mhd;
         private System.Windows.Forms.ComboBox cbo_mdv;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox Search_DiemDanh;
     }
 }

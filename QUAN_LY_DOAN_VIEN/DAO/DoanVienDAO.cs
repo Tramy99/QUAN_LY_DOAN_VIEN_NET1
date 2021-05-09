@@ -20,7 +20,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
         }
 
         private DoanVienDAO() { }
-
+        //phuong thuc lay danh sach doan vien
         public List<DoanVien> GetListMaDoanVien()
         {
             List<DoanVien> list = new List<DoanVien>();
@@ -37,15 +37,28 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
             return list;
         }
-
+        
         public DataTable GetListDoanVien()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', ns as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', ngayvd as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien");
         }
 
+        public bool CheckDoanVien(string key)
+        {
+            string query = "SELECT * FROM DoanVien WHERE madv = '" + key + "' ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
         public DataTable SearchById(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM DoanVien WHERE madv LIKE '%" + key + "%' or tendv LIKE '%" + key + "%' or macd LIKE '%" + key + "%' ");
+            return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', ns as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', ngayvd as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien" +
+                " WHERE madv LIKE '%" + key + "%' " +
+                "or tendv LIKE N'%" + key + "%' " +
+                "or que LIKE N'%" + key + "%' " +
+                "or gioitinh LIKE N'%" + key + "%' " +
+                "or macd LIKE '%" + key + "%' ");
         }
 
         public bool InsertDoanVien(string madv, string tendv, DateTime ns, string que, string gioitinh, DateTime ngayvd, string dt, string macd)

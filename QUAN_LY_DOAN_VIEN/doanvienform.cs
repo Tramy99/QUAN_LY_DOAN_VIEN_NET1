@@ -155,7 +155,7 @@ namespace QUAN_LY_DOAN_VIEN
             catch
             {
                 //throw new Exception("Không thể xóa vì còn tồn tại Foreign Key!");
-                MessageBox.Show("Không thể xóa vì còn tồn tại Foreign Key!");
+                MessageBox.Show("Không thể xóa vì còn tồn tại liên kết!");
             }
         }
 

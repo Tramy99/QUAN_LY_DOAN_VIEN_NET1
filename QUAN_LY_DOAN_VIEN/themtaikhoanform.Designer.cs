@@ -127,8 +127,8 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "0",
-            "1"});
+            "Đoàn Viên",
+            "Quản Lý"});
             this.comboBox1.Location = new System.Drawing.Point(235, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 24);

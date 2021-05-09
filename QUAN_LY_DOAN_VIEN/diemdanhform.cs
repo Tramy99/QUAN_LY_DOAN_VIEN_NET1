@@ -58,24 +58,20 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btnThemDD_Click(object sender, EventArgs e)
         {
-            try
+            int id = Convert.ToInt32(txt_id.Text);
+            string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
+            int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
+            string ghichu = txtGhiChuDD.Text;
+            if (DiemDanhDAO.Instance.InsertDiemDanh(id, madv, mahd, ghichu))
             {
-                int id = Convert.ToInt32(txt_id.Text);
-                string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
-                int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
-                string ghichu = txtGhiChuDD.Text;
-                if (DiemDanhDAO.Instance.InsertDiemDanh(id, madv, mahd, ghichu))
-                {
-                    MessageBox.Show("Thêm mới thành công!");
-                    LoadDiemDanh();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm mới thất bại!");
-                }
+                LoadDiemDanh();
+                MessageBox.Show("Thêm mới thành công!");
+                Clear();
             }
-            catch { }
+            else
+            {
+                MessageBox.Show("Thêm mới thất bại!");
+            }
         }
 
         private void Clear()
@@ -86,48 +82,41 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btnSuaDD_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = Convert.ToInt32(txt_id.Text);
-                string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
-                int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
-                string ghichu = txtGhiChuDD.Text;
+            int id = Convert.ToInt32(txt_id.Text);
+            string madv = (cbo_mdv.SelectedItem as DoanVien).Madv;
+            int mahd = (int)(cbo_mhd.SelectedItem as HoatDong).Mahd;
+            string ghichu = txtGhiChuDD.Text;
 
-                if (DiemDanhDAO.Instance.UpdateDiemDanh(id, madv, mahd, ghichu))
-                {
-                    MessageBox.Show("Sửa thành công!");
-                    LoadDiemDanh();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại!");
-                }
+            if (DiemDanhDAO.Instance.UpdateDiemDanh(id, madv, mahd, ghichu))
+            {
+                MessageBox.Show("Sửa thành công!");
             }
-            catch { }
+            else
+            {
+                MessageBox.Show("Sửa thất bại!");
+            }
+
+            LoadDiemDanh();
+            Clear();
         }
 
         private void btnXoaDD_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = Convert.ToInt32(txt_id.Text);
+            int id = Convert.ToInt32(txt_id.Text);
 
-                if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            if (DialogResult.Yes == MessageBox.Show("Bạn có muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                if (DiemDanhDAO.Instance.DeleteDiemDanh(id))
                 {
-                    if (DiemDanhDAO.Instance.DeleteDiemDanh(id))
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                        LoadDiemDanh();
-                        Clear();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại!");
-                    }
+                    MessageBox.Show("Xóa thành công!");
+                    Clear();
+                    LoadDiemDanh();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại!");
                 }
             }
-            catch { }
         }
 
         private void dataGridViewQLDIEMDANH_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -136,10 +125,16 @@ namespace QUAN_LY_DOAN_VIEN
             {
                 DataGridViewRow row = dataGridViewQLDIEMDANH.Rows[e.RowIndex];
                 txt_id.Text = row.Cells[0].Value.ToString();
-                cbo_mhd.Text = row.Cells[2].Value.ToString();
-                cbo_mdv.Text = row.Cells[1].Value.ToString();
+                cbo_mhd.Text = row.Cells[1].Value.ToString();
+                cbo_mdv.Text = row.Cells[2].Value.ToString();
                 txtGhiChuDD.Text = row.Cells[3].Value.ToString();
             }
+        }
+
+        private void Search_DiemDanh_TextChanged(object sender, EventArgs e)
+        {
+            string key = Search_DiemDanh.Text;
+            dataGridViewQLDIEMDANH.DataSource = DiemDanhDAO.Instance.SearchDiemDanh(key);
         }
     }
 }

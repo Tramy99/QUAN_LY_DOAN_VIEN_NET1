@@ -21,12 +21,12 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListXepLoai()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã xếp loại', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét', xeploai as N'Xếp loại', mahd as N'Mã hoạt động' FROM XepLoai");
+            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã xếp loại', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét', xeploai as N'Xếp loại', HoatDong.tenhd as N'Tên hoạt động' FROM XepLoai join HoatDong on XepLoai.mahd=HoatDong.mahd");
         }
 
         public DataTable SearchXepLoai(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM XepLoai WHERE xeploai LIKE '%" + key + "%' or madv LIKE '%" + key + "%' ");
+            return DataProvider.Instance.ExecuteQuery("Select id as N'Mã xếp loại', madv as N'Mã đoàn viên', namhoc as N' Năm học', nhanxet as N' Nhận xét', xeploai as N'Xếp loại', HoatDong.tenhd as N'Tên hoạt động' FROM XepLoai join HoatDong on XepLoai.mahd=HoatDong.mahd WHERE xeploai LIKE '%" + key + "%' or madv LIKE '%" + key + "%' ");
         }
 
         public bool InsertXepLoai(int id, string madv, int namhoc, string nhanxet, string xeploai, int mahd)

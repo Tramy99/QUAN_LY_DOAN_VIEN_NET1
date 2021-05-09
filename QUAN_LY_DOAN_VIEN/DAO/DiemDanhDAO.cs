@@ -21,7 +21,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListDiemDanh()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT id as N'Mã diểm danh', madv as N'Mã đoàn viên', mahd as N'Mã hoạt động', ghichu as N'Ghi chú' FROM DiemDanh");
+            return DataProvider.Instance.ExecuteQuery("SELECT DiemDanh.id as N'Mã diểm danh', HoatDong.tenhd as N'Tên Hoạt Động', madv as N'Mã đoàn viên', DiemDanh.ghichu as N'Ghi chú' FROM DiemDanh join HoatDong on DiemDanh.mahd=HoatDong.mahd");
         }
 
         public bool InsertDiemDanh(int id, string madv, int mahd, string ghichu)
@@ -46,6 +46,14 @@ namespace QUAN_LY_DOAN_VIEN.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
+        }
+
+        public DataTable SearchDiemDanh(string key)
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT DiemDanh.id as N'Mã diểm danh', HoatDong.tenhd as N'Tên Hoạt Động', madv as N'Mã đoàn viên', DiemDanh.ghichu as N'Ghi chú' FROM DiemDanh join HoatDong on DiemDanh.mahd=HoatDong.mahd" +
+                " WHERE DiemDanh.madv LIKE '%" + key + "%'" +
+                " or HoatDong.tenhd LIKE N'%" + key + "%'" +
+                " or DiemDanh.ghichu LIKE N'%" + key + "%'");
         }
     }
 }

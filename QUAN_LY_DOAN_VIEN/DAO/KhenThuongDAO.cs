@@ -21,7 +21,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListKhenThuong()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT makt as N'Má khen thưởng', madv as N'Mã đoàn viên', namhoc as N'Năm học', tenkt as N'Tên Khen Thưởng', thanhtich as N'Thành Tích' , namhoc as N'Năm Học' FROM KhenThuong");
+            return DataProvider.Instance.ExecuteQuery("SELECT makt as N'Má khen thưởng', madv as N'Mã đoàn viên', namhoc as N'Năm học', tenkt as N'Tên Khen Thưởng', thanhtich as N'Thành Tích' FROM KhenThuong");
         }
 
         public bool InsertKhenThuong(int Makt, string Madv, string Tenkt, string Thanhtich, int Namhoc)
@@ -48,7 +48,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable SearchKhenThuong(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM KhenThuong WHERE madv LIKE '%" + key + "%' ");
+            return DataProvider.Instance.ExecuteQuery("SELECT makt as N'Má khen thưởng', madv as N'Mã đoàn viên', namhoc as N'Năm học', tenkt as N'Tên Khen Thưởng', thanhtich as N'Thành Tích' from KhenThuong WHERE madv LIKE '%" + key + "%' ");
         }
     }
 }

@@ -45,7 +45,9 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable Search(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM HoatDong WHERE mahd LIKE '%" + key + "%' or tenhd LIKE '%" + key + "%' ");
+            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', thoigiantc as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong WHERE " +
+                "mahd LIKE '%" + key + "%' " +
+                "or tenhd LIKE N'%" + key + "%' ");
         }
 
         public bool InsertHoatDong(int mahd, string tenhd, DateTime thoigiantc, string ghichu)

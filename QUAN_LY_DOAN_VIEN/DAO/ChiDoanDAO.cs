@@ -52,7 +52,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public bool UpdateChiDoan(string macd, string tencd)
         {
-            string query = "UPDATE ChiDoan SET tencd = N'" + tencd + "' WHERE macd = N'" + macd + "' ";
+            string query = "UPDATE ChiDoan SET tencd = N'" + tencd + "' WHERE macd = '" + macd + "' ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

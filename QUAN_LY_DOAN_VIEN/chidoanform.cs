@@ -71,23 +71,19 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btn_Suachidoan_Click(object sender, EventArgs e)
         {
-            try 
-            {
-                string macd = txtmachidoan.Text;
-                string tencd = txttenchidoan.Text;
+            string macd = txtmachidoan.Text;
+            string tencd = txttenchidoan.Text;
 
-                if (ChiDoanDAO.Instance.UpdateChiDoan(macd, tencd))
-                {
-                    MessageBox.Show("Sửa thành công!");
-                    LoadChiDoan();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại!");
-                }
-            } 
-            catch { }
+            if (ChiDoanDAO.Instance.UpdateChiDoan(macd, tencd))
+            {
+                MessageBox.Show("Sửa thành công!");
+                LoadChiDoan();
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Sửa thất bại!");
+            }
         }
 
         private void btn_Xoachidoan_Click(object sender, EventArgs e)

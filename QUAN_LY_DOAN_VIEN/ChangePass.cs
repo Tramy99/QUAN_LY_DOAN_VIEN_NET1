@@ -54,6 +54,17 @@ namespace QUAN_LY_DOAN_VIEN
                     bool result = AccountDAO.Instance.UpdateAccount(userName, newPass);
                     if(result)
                     {
+                        List<Form> openForms = new List<Form>();
+
+                        foreach (Form f in Application.OpenForms)
+                            openForms.Add(f);
+                        login_form lg = new login_form();
+                        lg.Show();
+                        foreach (Form f in openForms)
+                        {
+                            if (f.Name != "login_form")
+                                f.Close();
+                        }
                         MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

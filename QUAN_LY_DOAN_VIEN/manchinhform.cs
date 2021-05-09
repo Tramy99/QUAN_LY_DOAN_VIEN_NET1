@@ -108,10 +108,18 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void mnuDX_Click(object sender, EventArgs e)
         {
-            login_form logout = new login_form();
-            //logout.Visible = true;
-            this.Hide();
-            logout.Show();
+            List<Form> openForms = new List<Form>();
+
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+            login_form lg = new login_form();
+            lg.Show();
+            foreach (Form f in openForms)
+            {
+                if (f.Name != "login_form")
+                    f.Close();
+            }
+            this.Close();
         }
 
         private void QLTKDVToolStripMenuItem_Click(object sender, EventArgs e)

@@ -70,9 +70,9 @@ namespace QUAN_LY_DOAN_VIEN
             // txtmachidoan
             // 
             this.txtmachidoan.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmachidoan.Location = new System.Drawing.Point(399, 104);
+            this.txtmachidoan.Location = new System.Drawing.Point(314, 104);
             this.txtmachidoan.Name = "txtmachidoan";
-            this.txtmachidoan.Size = new System.Drawing.Size(221, 28);
+            this.txtmachidoan.Size = new System.Drawing.Size(306, 28);
             this.txtmachidoan.TabIndex = 2;
             // 
             // dgv_cd
@@ -92,7 +92,7 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 110);
+            this.label1.Location = new System.Drawing.Point(160, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 22);
             this.label1.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(205, 158);
+            this.label2.Location = new System.Drawing.Point(156, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 22);
             this.label2.TabIndex = 5;
@@ -111,9 +111,9 @@ namespace QUAN_LY_DOAN_VIEN
             // txttenchidoan
             // 
             this.txttenchidoan.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttenchidoan.Location = new System.Drawing.Point(399, 152);
+            this.txttenchidoan.Location = new System.Drawing.Point(314, 152);
             this.txttenchidoan.Name = "txttenchidoan";
-            this.txttenchidoan.Size = new System.Drawing.Size(221, 28);
+            this.txttenchidoan.Size = new System.Drawing.Size(306, 28);
             this.txttenchidoan.TabIndex = 2;
             // 
             // btn_Suachidoan

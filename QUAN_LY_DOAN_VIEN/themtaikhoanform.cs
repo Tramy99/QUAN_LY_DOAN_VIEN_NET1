@@ -21,12 +21,13 @@ namespace QUAN_LY_DOAN_VIEN
 
         private void btn_saveTHE_Click(object sender, EventArgs e)
         {
-            try
+            string userName = textBox_TenTK.Text;
+            string passWord = textBox_Matkhau.Text;
+            int type = (comboBox1.SelectedIndex);
+            var check = AccountDAO.Instance.GetAccountByUserName(userName);
+            var check2 = DoanVienDAO.Instance.CheckDoanVien(userName);
+            if(type == 0 && check2)
             {
-                string userName = textBox_TenTK.Text;
-                string passWord = textBox_Matkhau.Text;
-                int type = (comboBox1.SelectedIndex);
-
                 if (AccountDAO.Instance.InsertAccount(userName, passWord, type))
                 {
                     MessageBox.Show("Thêm tài khoản thành công!");
@@ -36,7 +37,24 @@ namespace QUAN_LY_DOAN_VIEN
                     MessageBox.Show("Thêm tài khoản thất bại!");
                 }
             }
-            catch { }
+            else if(type == 1)
+            {
+                if (check == null)
+                {
+                    if (AccountDAO.Instance.InsertAccount(userName, passWord, type))
+                    {
+                        MessageBox.Show("Thêm tài khoản thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm tài khoản thất bại!");
+                    }
+                }
+            }    
+            else
+            {
+                MessageBox.Show("Tài Khoản không hợp lệ");
+            }    
         }
 
         private void button2_Click(object sender, EventArgs e)
