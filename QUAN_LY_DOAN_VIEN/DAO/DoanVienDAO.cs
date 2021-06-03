@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,12 +44,10 @@ namespace QUAN_LY_DOAN_VIEN.DAO
             return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', ns as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', ngayvd as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien");
         }
 
-        public bool CheckDoanVien(string key)
+        public bool CheckDoanVien(string madv)
         {
-            string query = "SELECT * FROM DoanVien WHERE madv = '" + key + "' ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-            return result > 0;
+            DataTable da = DataProvider.Instance.ExecuteQuery("Select * FROM DoanVien where madv = '" + madv + "'");
+            return da.Rows.Count >= 1;
         }
 
         public DataTable SearchById(string key)

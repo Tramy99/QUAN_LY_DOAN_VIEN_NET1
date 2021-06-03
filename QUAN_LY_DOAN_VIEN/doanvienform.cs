@@ -54,6 +54,7 @@ namespace QUAN_LY_DOAN_VIEN
         {
             try 
             {
+                //Lấy giá trị từ form
                 DateTime ns = Convert.ToDateTime(dateTimePickerNs.Text);
                 DateTime ngayvd = Convert.ToDateTime(dateTimePickerNvd.Text);
                 string madv = txt_mdv.Text;
@@ -63,9 +64,11 @@ namespace QUAN_LY_DOAN_VIEN
                 string dt = txt_dt.Text;
                 string macd = (cbo_mcd.SelectedItem as ChiDoan).Macd;
 
+                //Thêm các giá trị vừa lấy được vào bảng đoàn viên
                 if (DoanVienDAO.Instance.InsertDoanVien(madv, tendv, ns, que, gioitinh, ngayvd, dt, macd))
                 {
                     MessageBox.Show("Thêm mới thành công!");
+                    //Load lại Datagridview và xóa thông tin các input vừa thêm
                     LoadDoanVien();
                     Clear();
                 }
@@ -116,7 +119,7 @@ namespace QUAN_LY_DOAN_VIEN
                 throw new Exception("Lỗi!");
             }
         }
-
+        //do dl ra dgv
         private void dgv_doanvien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -154,7 +157,7 @@ namespace QUAN_LY_DOAN_VIEN
             }
             catch
             {
-                //throw new Exception("Không thể xóa vì còn tồn tại Foreign Key!");
+                
                 MessageBox.Show("Không thể xóa vì còn tồn tại liên kết!");
             }
         }

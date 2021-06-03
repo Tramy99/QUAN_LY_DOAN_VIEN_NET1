@@ -24,9 +24,15 @@ namespace QUAN_LY_DOAN_VIEN
             string userName = textBox_TenTK.Text;
             string passWord = textBox_Matkhau.Text;
             int type = (comboBox1.SelectedIndex);
+
+            //Kiểm tra xem đã có tên đăng nhập này hay chưa
             var check = AccountDAO.Instance.GetAccountByUserName(userName);
+
+            //Kiểm tra mã sinh viên có tồn tại hay không
             var check2 = DoanVienDAO.Instance.CheckDoanVien(userName);
-            if(type == 0 && check2)
+
+            //Nếu type = 0 (Đoàn viên)
+            if (type == 0 && check2 && check == null)
             {
                 if (AccountDAO.Instance.InsertAccount(userName, passWord, type))
                 {
@@ -37,7 +43,7 @@ namespace QUAN_LY_DOAN_VIEN
                     MessageBox.Show("Thêm tài khoản thất bại!");
                 }
             }
-            else if(type == 1)
+            else if (type == 1)
             {
                 if (check == null)
                 {
@@ -50,11 +56,11 @@ namespace QUAN_LY_DOAN_VIEN
                         MessageBox.Show("Thêm tài khoản thất bại!");
                     }
                 }
-            }    
+            }
             else
             {
                 MessageBox.Show("Tài Khoản không hợp lệ");
-            }    
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -252,7 +252,7 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dateTimePickerNvd
             // 
-            this.dateTimePickerNvd.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerNvd.CustomFormat = "dd-MM-yyyy";
             this.dateTimePickerNvd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNvd.Location = new System.Drawing.Point(751, 260);
             this.dateTimePickerNvd.Name = "dateTimePickerNvd";
@@ -261,7 +261,7 @@ namespace QUAN_LY_DOAN_VIEN
             // 
             // dateTimePickerNs
             // 
-            this.dateTimePickerNs.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerNs.CustomFormat = "dd-MM-yyy";
             this.dateTimePickerNs.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNs.Location = new System.Drawing.Point(751, 156);
             this.dateTimePickerNs.Name = "dateTimePickerNs";
