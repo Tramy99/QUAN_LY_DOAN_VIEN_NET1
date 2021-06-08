@@ -40,12 +40,12 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable GetListHoatDong()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', thoigiantc as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong");
+            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', convert(varchar, thoigiantc, 105) as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong");
         }
 
         public DataTable Search(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', thoigiantc as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong WHERE " +
+            return DataProvider.Instance.ExecuteQuery("SELECT mahd as N'Mã hoạt động', tenhd as N'Tên hoạt động', convert(varchar, thoigiantc, 105) as N' Thời gian tổ chức', ghichu as N' Ghi chú' FROM HoatDong WHERE " +
                 "mahd LIKE '%" + key + "%' " +
                 "or tenhd LIKE N'%" + key + "%' ");
         }

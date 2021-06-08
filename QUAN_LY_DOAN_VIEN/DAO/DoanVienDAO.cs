@@ -41,7 +41,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
         
         public DataTable GetListDoanVien()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', ns as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', ngayvd as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien");
+            return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', convert(varchar, ns, 105) as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', convert(varchar, ngayvd, 105) as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien");
         }
 
         public bool CheckDoanVien(string madv)
@@ -52,7 +52,7 @@ namespace QUAN_LY_DOAN_VIEN.DAO
 
         public DataTable SearchById(string key)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', ns as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', ngayvd as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien" +
+            return DataProvider.Instance.ExecuteQuery("SELECT madv as N'Mã đoàn viên', tendv as N'Tên đoàn viên', convert(varchar, ns, 105) as N'Ngày sinh', que as N'Quê quán',gioitinh as N'Giới tính', convert(varchar, ngayvd, 105) as N'Ngày vào đoàn', dt as N'Dân tộc', macd as N'Mã chi đoàn' FROM DoanVien" +
                 " WHERE madv LIKE '%" + key + "%' " +
                 "or tendv LIKE N'%" + key + "%' " +
                 "or que LIKE N'%" + key + "%' " +
